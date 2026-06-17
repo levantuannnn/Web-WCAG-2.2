@@ -4,320 +4,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tin Tức Huế - Trang Chủ</title>
-
+    <title>Tin Tức Cố Đô - Phiên Bản Trợ Năng Toàn Diện</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="bg-gray-100">
 
-    <a href="#main-content"
-        class="absolute -left-[9999px] focus:left-4 focus:top-4 bg-black text-white px-4 py-2 rounded z-50">
+    <a href="#main-content" class="skip-link">
         Bỏ qua menu và đến nội dung chính
     </a>
 
     <header class="bg-gray-900 text-white p-4">
-        <div class="container mx-auto flex flex-wrap items-center gap-4">
-
-            <img src="tintuc.png" alt="Logo Tin Tức Huế" class="h-16">
-
-            <h1 class="text-3xl font-bold">
-                Tin Tức
-            </h1>
-
-            <div class="ml-auto flex gap-2">
-
-                <button id="decrease-font" aria-label="Giảm cỡ chữ" class="bg-white text-black px-3 py-2 rounded">
-                    A-
-                </button>
-
-                <button id="increase-font" aria-label="Tăng cỡ chữ" class="bg-white text-black px-3 py-2 rounded">
-                    A+
-                </button>
-
-                <button id="contrast-btn" aria-label="Bật chế độ tương phản cao"
-                    class="bg-yellow-300 text-black px-3 py-2 rounded">
-                    Tương phản cao
-                </button>
-
+        <div class="header-container">
+            <div class="brand flex-items">
+                <img src="tintuc.png" alt="Logo Tin Tức Huế" class="logo-img">
+                <h1 class="text-3xl font-bold">Tin Tức Cố Đô</h1>
             </div>
 
+            <div class="accessibility-controls">
+                <button id="decrease-font" aria-label="Giảm kích thước văn bản" class="acc-btn">A-</button>
+                <button id="increase-font" aria-label="Tăng kích thước văn bản" class="acc-btn">A+</button>
+                <button id="contrast-btn" aria-label="Thay đổi chế độ tương phản màu sắc" class="acc-btn contrast-toggle">Tương phản cao</button>
+            </div>
         </div>
     </header>
 
-    <nav aria-label="Menu chính" class="bg-gray-800 text-white">
-
-        <ul class="flex flex-wrap justify-center gap-2 md:gap-8 py-3 font-semibold">
-
-            <li>
-                <a href="#"
-                    class="block px-4 py-2 rounded-md hover:bg-white hover:text-red-600 focus:outline-none focus:ring-2 focus:ring-yellow-300">
-                    Trang chủ
-                </a>
-            </li>
-
-            <li>
-                <a href="#"
-                    class="block px-4 py-2 rounded-md hover:bg-white hover:text-red-600 focus:outline-none focus:ring-2 focus:ring-yellow-300">
-                    Công nghệ
-                </a>
-            </li>
-
-            <li>
-                <a href="#"
-                    class="block px-4 py-2 rounded-md hover:bg-white hover:text-red-600 focus:outline-none focus:ring-2 focus:ring-yellow-300">
-                    Thể thao
-                </a>
-            </li>
-
-            <li>
-                <a href="#"
-                    class="block px-4 py-2 rounded-md hover:bg-white hover:text-red-600 focus:outline-none focus:ring-2 focus:ring-yellow-300">
-                    Giải trí
-                </a>
-            </li>
-
-            <li>
-                <a href="#"
-                    class="block px-4 py-2 rounded-md hover:bg-white hover:text-red-600 focus:outline-none focus:ring-2 focus:ring-yellow-300">
-                    Giáo dục
-                </a>
-            </li>
-
-            <li>
-                <a href="#"
-                    class="block px-4 py-2 rounded-md hover:bg-white hover:text-red-600 focus:outline-none focus:ring-2 focus:ring-yellow-300">
-                    Kinh doanh
-                </a>
-            </li>
-
-            <li>
-                <a href="#"
-                    class="block px-4 py-2 rounded-md hover:bg-white hover:text-red-600 focus:outline-none focus:ring-2 focus:ring-yellow-300">
-                    Liên hệ
-                </a>
-            </li>
-
+    <nav aria-label="Menu danh mục chính" class="bg-gray-800 text-white shadow-md">
+        <ul role="tablist" class="nav-tabs">
+            <li role="presentation"><button id="tab-home" role="tab" aria-selected="true" aria-controls="panel-home" class="tab-link active-tab">Trang chủ</button></li>
+            <li role="presentation"><button id="tab-tech" role="tab" aria-selected="false" aria-controls="panel-tech" tabindex="-1" class="tab-link">Công nghệ</button></li>
+            <li role="presentation"><button id="tab-sports" role="tab" aria-selected="false" aria-controls="panel-sports" tabindex="-1" class="tab-link">Thể thao</button></li>
+            <li role="presentation"><button id="tab-ent" role="tab" aria-selected="false" aria-controls="panel-ent" tabindex="-1" class="tab-link">Giải trí</button></li>
+            <li role="presentation"><button id="tab-edu" role="tab" aria-selected="false" aria-controls="panel-edu" tabindex="-1" class="tab-link">Giáo dục</button></li>
+            <li role="presentation"><button id="tab-biz" role="tab" aria-selected="false" aria-controls="panel-biz" tabindex="-1" class="tab-link">Kinh doanh</button></li>
+            <li role="presentation"><button id="tab-contact" role="tab" aria-selected="false" aria-controls="panel-contact" tabindex="-1" class="tab-link">Liên hệ</button></li>
         </ul>
     </nav>
 
-    <main id="main-content" class="flex flex-col md:flex-row gap-6= p-6">
+    <main id="main-content" class="main-layout" tabindex="-1">
 
-        <section class="w-full md:w-3/4">
-
-            <h2 class="text-2xl font-bold mb-4">
-                Công nghệ
-            </h2>
-
-            <article class="bg-white rounded-lg shadow overflow-hidden">
-
-                <h2 class="text-xl font-semibold mb-3 pb-2">
-                    Điện thoại gập Samsung dùng được mấy năm trước khi hỏng?
-                </h2>
-                <img src="cong-nghe/1x_1_7_.webp" alt="Điện thoại Samsung Galaxy Z Fold đang mở màn hình gập"
-                    class="w-300">
-
-                <div class="p-4">
-
-                    <div class="p-4">
-
-                        <p class="text-gray-800 leading-9 font-semibold mb-4">
-                            Điện thoại gập đã đi một chặng đường dài kể từ những thế hệ đầu tiên xuất hiện trên thị
-                            trường.
-                            Các mẫu máy mới như Samsung Galaxy Z Fold, Google Pixel Fold hay Honor Magic V đều sở hữu
-                            thiết kế
-                            mỏng hơn, bản lề chắc chắn hơn và khả năng chống nước, chống bụi ngày càng hoàn thiện.
-                        </p>
-
-                        <p class="text-gray-800 leading-9 font-semibold mb-4">
-                            Tuy nhiên, một câu hỏi vẫn thường xuyên xuất hiện trên các diễn đàn công nghệ: điện thoại
-                            gập thực
-                            sự có thể sử dụng được bao lâu? Nếu với smartphone truyền thống, người dùng có thể kỳ vọng
-                            vòng đời
-                            4-5 năm nhờ phần cứng bền bỉ và thời gian hỗ trợ phần mềm kéo dài, câu trả lời với điện
-                            thoại gập
-                            lại phức tạp hơn.
-                        </p>
-
-                        <p class="text-gray-800 leading-9 font-semibold mb-4">
-                            Nguyên nhân nằm ở chính thiết kế của thiết bị.
-                        </p>
-
-                        <p class="text-gray-800 leading-9 font-semibold mb-4">
-                            Không giống điện thoại thông thường, smartphone gập sở hữu nhiều bộ phận chuyển động như bản
-                            lề và
-                            màn hình có khả năng uốn cong liên tục. Trong đó, màn hình bên trong được xem là thành phần
-                            dễ bị
-                            ảnh hưởng nhất theo thời gian.
-                        </p>
-
-                        <p class="text-gray-800 leading-9 font-semibold mb-4">
-                            Các nhà sản xuất đã đầu tư đáng kể để cải thiện độ bền. Samsung cho biết Galaxy Z Fold 7 có
-                            thể
-                            chịu được tới 500.000 lần gập mở, gấp 2,5 lần so với một số thế hệ trước. Nhiều mẫu máy mới
-                            cũng
-                            được trang bị khung kim loại cứng hơn, khả năng chống bụi và chống nước tốt hơn.
-                        </p>
-
-                        <p class="text-gray-800 leading-9 font-semibold mb-4">
-                            Dù vậy, trải nghiệm của người dùng cho thấy các vấn đề đặc trưng của điện thoại gập vẫn có
-                            thể xuất
-                            hiện sau một thời gian sử dụng.
-                        </p>
-
-                        <p class="text-gray-800 leading-9 font-semibold mb-4">
-                            Trên Reddit, nhiều chủ sở hữu Galaxy Z Fold đời cũ cho biết lớp bảo vệ màn hình bên trong
-                            bắt đầu
-                            bong mép sau khoảng 12-18 tháng. Một số trường hợp xuất hiện các vết nứt nhỏ dọc theo nếp
-                            gấp,
-                            trong khi những người khác gặp tình trạng màn hình không còn mở phẳng hoàn toàn.
-                        </p>
-
-                        <p class="text-gray-800 leading-9 font-semibold mb-4">
-                            Tuy nhiên, không phải mọi trải nghiệm đều tiêu cực. Nhiều người dùng Galaxy Z Fold 5 cho
-                            biết thiết
-                            bị vẫn hoạt động ổn định sau gần hai năm sử dụng. Một số trường hợp còn ghi nhận máy sống
-                            sót sau
-                            các cú rơi mạnh hoặc môi trường làm việc khắc nghiệt mà không gặp hư hỏng nghiêm trọng.
-                        </p>
-
-                        <p class="text-gray-800 leading-9 font-semibold mb-4">
-                            Một khảo sát cộng đồng được thực hiện trên Reddit năm 2025 đối với các dòng Galaxy Z Fold
-                            cho thấy
-                            Samsung đã cải thiện đáng kể độ bền qua từng thế hệ. Các mẫu Fold 5 và Fold 6 ghi nhận ít
-                            trường
-                            hợp nứt màn hình, bong lớp bảo vệ hoặc xuất hiện vết nứt vi mô hơn so với Fold 3 và Fold 4.
-                        </p>
-
-                        <p class="text-gray-800 leading-9 font-semibold mb-4">
-                            Dữ liệu khảo sát cũng cho thấy các vấn đề nghiêm trọng nhất thường xuất hiện sau năm đầu
-                            tiên và đạt
-                            đỉnh vào khoảng năm thứ hai sử dụng.
-                        </p>
-
-                        <p class="text-gray-800 leading-9 font-semibold">
-                            Điều đó không đồng nghĩa điện thoại gập chỉ dùng được hai năm. Trên thực tế, nhiều thiết bị
-                            vẫn có
-                            thể hoạt động lâu hơn nếu được bảo quản tốt. Tuy nhiên, đây là khoảng thời gian mà người
-                            dùng có
-                            nhiều khả năng phải thay lớp bảo vệ màn hình hoặc thực hiện các sửa chữa liên quan đến màn
-                            hình gập.
-                        </p>
-
+        <div class="content-area">
+            
+            <section id="full-article-view" class="card p-6 hidden" aria-live="polite">
+                <button id="back-to-list-btn" class="back-btn" aria-label="Quay lại danh sách bài viết cũ">&larr; Quay lại danh sách tin</button>
+                <div id="full-article-content" class="mt-4">
                     </div>
+            </section>
 
-                </div>
+            <div id="tabs-container">
 
-            </article>
+                <section id="panel-home" role="tabpanel" aria-labelledby="tab-home" class="tab-panel">
+                    <h2 class="section-title">Tin tức tiêu điểm trong ngày</h2>
+                    
+                    <article class="card p-6">
+                        <span class="badge bg-red">Tiêu điểm</span>
+                        <h3 class="text-xl font-semibold mb-2 mt-2">Khai mạc tuần lễ văn hóa di sản đặc sắc tại trung tâm thành phố</h3>
+                        <p class="text-gray-800 mb-3 line-clamp-2">Sáng nay, chuỗi lễ hội văn hóa truyền thống quy mô lớn đã chính thức bắt đầu tại quảng trường trung tâm cố đô với nhiều hoạt động hấp dẫn...</p>
+                        <button class="read-more-btn" onclick="openFullArticle('home-1')">Đọc bài báo hoàn chỉnh <span class="sr-only">về Khai mạc tuần lễ văn hóa di sản</span></button>
+                    </article>
 
-        </section>
-        <!-- Side-bar cua phan tin tuc -->
-        <aside aria-label="Danh mục tin tức" class="w-full md:w-1/4 bg-white p-4 rounded-lg shadow">
+                    <article class="card p-6">
+                        <span class="badge bg-blue">Tin mới</span>
+                        <h3 class="text-xl font-semibold mb-2 mt-2">Dự thảo chuyển đổi xanh: Đầu tư đồng bộ hạ tầng xe điện đô thị</h3>
+                        <p class="text-gray-800 mb-3 line-clamp-2">UBND tỉnh vừa phê duyệt đề án thử nghiệm xây dựng 50 trạm sạc điện thông minh ứng dụng công nghệ năng lượng mặt trời thế hệ mới...</p>
+                        <button class="read-more-btn" onclick="openFullArticle('home-2')">Đọc bài báo hoàn chỉnh <span class="sr-only">về Dự thảo hạ tầng xe điện đô thị</span></button>
+                    </article>
+                </section>
 
-            <h2 class="text-xl font-bold mb-4 border-b pb-2">
-                Chuyên mục
-            </h2>
+                <section id="panel-tech" role="tabpanel" aria-labelledby="tab-tech" class="tab-panel hidden" aria-hidden="true">
+                    <h2 class="section-title">Chuyên mục: Công nghệ</h2>
+                    
+                    <article class="card p-6">
+                        <h3 class="text-xl font-semibold mb-2">Điện thoại gập Samsung dùng được mấy năm trước khi hỏng?</h3>
+                        <p class="text-gray-800 mb-3 line-clamp-2">Theo các báo cáo thử nghiệm độ bền phần cứng mới nhất năm 2026, thế hệ màn hình gập mới đã có những bước tiến vượt bậc đáng kể...</p>
+                        <button class="read-more-btn" onclick="openFullArticle('tech-1')">Đọc bài báo hoàn chỉnh <span class="sr-only">về Độ bền điện thoại gập Samsung</span></button>
+                    </article>
 
-            <ul class="space-y-4">
+                    <article class="card p-6">
+                        <h3 class="text-xl font-semibold mb-2">Ứng dụng trí tuệ nhân tạo (AI) tối ưu hóa mạng lưới điện thông minh</h3>
+                        <p class="text-gray-800 mb-3 line-clamp-2">Các tập đoàn viễn thông lớn vừa ứng dụng thử nghiệm mô hình thuật toán học máy điều phối năng lượng tải điện tự động định giờ cao điểm...</p>
+                        <button class="read-more-btn" onclick="openFullArticle('tech-2')">Đọc bài báo hoàn chỉnh <span class="sr-only">về AI tối ưu hóa mạng lưới điện</span></button>
+                    </article>
+                </section>
 
-                <li class="border-b pb-3">
-                    <a href="#" class="text-lg font-semibold text-red-700 hover:underline">
-                        Công nghệ
-                    </a>
+                <section id="panel-sports" role="tabpanel" aria-labelledby="tab-sports" class="tab-panel hidden" aria-hidden="true">
+                    <h2 class="section-title">Chuyên mục: Thể thao</h2>
+                    <article class="card p-6">
+                        <h3 class="text-xl font-semibold mb-2">Giải chạy Marathon quốc tế Huế 2026 phá kỷ lục vận động viên</h3>
+                        <p class="text-gray-800 mb-3 line-clamp-2">Ban tổ chức sự kiện chạy điền kinh công bố số lượng hồ sơ đạt cột mốc lịch sử mới với hơn 15.000 chân chạy chuyên nghiệp đăng ký...</p>
+                        <button class="read-more-btn" onclick="openFullArticle('sports-1')">Đọc bài báo hoàn chỉnh <span class="sr-only">về Giải chạy Marathon quốc tế Huế</span></button>
+                    </article>
+                </section>
 
-                    <p class="text-sm text-gray-800 mt-1">
-                        Tin tức về AI, phần mềm và phần cứng.
-                    </p>
-                </li>
+                <section id="panel-ent" role="tabpanel" aria-labelledby="tab-ent" class="tab-panel hidden" aria-hidden="true">
+                    <h2 class="section-title">Chuyên mục: Giải trí</h2>
+                    <article class="card p-6">
+                        <h3 class="text-xl font-semibold mb-2">Sân khấu trình diễn nghệ thuật thực cảnh huyền ảo trên Sông Hương</h3>
+                        <p class="text-gray-800 mb-3 line-clamp-2">Đêm diễn mở màn nghệ thuật âm nhạc thực cảnh kết hợp công nghệ ánh sáng đồ họa 3D Mapping lên mặt nước lung linh kỳ ảo...</p>
+                        <button class="read-more-btn" onclick="openFullArticle('ent-1')">Đọc bài báo hoàn chỉnh <span class="sr-only">về Sân khấu thực cảnh sông Hương</span></button>
+                    </article>
+                </section>
 
-                <li class="border-b pb-3">
-                    <a href="#" class="text-lg font-semibold text-red-700 hover:underline">
-                        Thể thao
-                    </a>
+                <section id="panel-edu" role="tabpanel" aria-labelledby="tab-edu" class="tab-panel hidden" aria-hidden="true">
+                    <h2 class="section-title">Chuyên mục: Giáo dục</h2>
+                    <article class="card p-6">
+                        <h3 class="text-xl font-semibold mb-2">Đại học Huế đẩy mạnh số hóa quy trình làm hồ sơ nguyện vọng</h3>
+                        <p class="text-gray-800 mb-3 line-clamp-2">Hệ thống phần mềm xét tuyển tích hợp dữ liệu căn cước công dân giúp học sinh rút ngắn thời gian thao tác xuống chỉ còn 3 phút...</p>
+                        <button class="read-more-btn" onclick="openFullArticle('edu-1')">Đọc bài báo hoàn chỉnh <span class="sr-only">về Số hóa xét tuyển Đại học Huế</span></button>
+                    </article>
+                </section>
 
-                    <p class="text-sm text-gray-800 mt-1">
-                        Kết quả thi đấu và các sự kiện nổi bật.
-                    </p>
-                </li>
+                <section id="panel-biz" role="tabpanel" aria-labelledby="tab-biz" class="tab-panel hidden" aria-hidden="true">
+                    <h2 class="section-title">Chuyên mục: Kinh doanh</h2>
+                    <article class="card p-6">
+                        <h3 class="text-xl font-semibold mb-2">Kinh tế tuần hoàn: Doanh nghiệp dệt may đón đầu năng lượng xanh</h3>
+                        <p class="text-gray-800 mb-3 line-clamp-2">Để đáp ứng rào cản tiêu chuẩn phát triển bền vững ESG khó tính từ Châu Âu, các doanh nghiệp đồng loạt lắp điện mặt trời áp mái...</p>
+                        <button class="read-more-btn" onclick="openFullArticle('biz-1')">Đọc bài báo hoàn chỉnh <span class="sr-only">về Kinh tế tuần hoàn dệt may</span></button>
+                    </article>
+                </section>
 
-                <li class="border-b pb-3">
-                    <a href="#" class="text-lg font-semibold text-red-700 hover:underline">
-                        Giải trí
-                    </a>
+                <section id="panel-contact" role="tabpanel" aria-labelledby="tab-contact" class="tab-panel hidden" aria-hidden="true">
+                    <h2 class="section-title">Liên hệ góp ý với tòa soạn</h2>
+                    <div class="card p-6">
+                        <form action="#" method="POST" class="contact-form" onsubmit="event.preventDefault(); alert('Gửi liên hệ thành công!');">
+                            <div class="form-group">
+                                <label for="fullname" class="form-label">Họ và tên <span class="text-red-700">*</span></label>
+                                <input type="text" id="fullname" name="fullname" required aria-required="true" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="form-label">Địa chỉ Email <span class="text-red-700">*</span></label>
+                                <input type="email" id="email" name="email" required aria-required="true" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label for="message" class="form-label">Nội dung thư phản hồi <span class="text-red-700">*</span></label>
+                                <textarea id="message" name="message" rows="5" required aria-required="true" class="form-input"></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">Xác nhận gửi thông tin</button>
+                        </form>
+                    </div>
+                </section>
 
-                    <p class="text-sm text-gray-800 mt-1">
-                        Điện ảnh, âm nhạc và người nổi tiếng.
-                    </p>
-                </li>
+            </div>
+        </div>
 
-                <li>
-                    <a href="#" class="text-lg font-semibold text-red-700 hover:underline">
-                        Giáo dục
-                    </a>
-
-                    <p class="text-sm text-gray-800 mt-1">
-                        Tin tức tuyển sinh và học tập.
-                    </p>
-                </li>
-
+        <aside aria-label="Khối tiện ích chuyển danh mục nhanh" class="sidebar">
+            <h2 class="sidebar-title">Danh mục nhanh</h2>
+            <ul class="sidebar-list">
+                <li><button onclick="switchTab('tab-tech', true)" class="sidebar-link">Chuyên mục Công nghệ</button></li>
+                <li><button onclick="switchTab('tab-sports', true)" class="sidebar-link">Chuyên mục Thể thao</button></li>
+                <li><button onclick="switchTab('tab-ent', true)" class="sidebar-link">Chuyên mục Giải trí</button></li>
+                <li><button onclick="switchTab('tab-edu', true)" class="sidebar-link">Chuyên mục Giáo dục</button></li>
+                <li><button onclick="switchTab('tab-biz', true)" class="sidebar-link">Chuyên mục Kinh doanh</button></li>
             </ul>
-
         </aside>
 
     </main>
 
     <footer class="bg-gray-900 text-white p-6">
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-
+        <div class="footer-grid">
             <section>
-                <h2 class="font-bold text-lg mb-2">
-                    Tin Tức
-                </h2>
-
-                <p>
-                    Cập nhật tin tức nhanh chóng và chính xác.
-                </p>
+                <h2 class="footer-heading">Cổng thông tin tin tức</h2>
+                <p class="text-sm">Truyền tải dòng tin tức số hóa nhanh chóng, chuẩn xác, tin cậy tới độc giả.</p>
             </section>
-
             <section>
-                <h2 class="font-bold text-lg mb-2">
-                    Liên Hệ
-                </h2>
-
-                <p>Email: contact@news.com</p>
-
-                <p>
-                    Số điện thoại:
-                    <a href="tel:0392189544" class="underline">
-                        0392189544
-                    </a>
-                </p>
+                <h2 class="footer-heading">Thông tin tòa soạn</h2>
+                <p class="text-sm">Email: contact@news.com | Hotline: <a href="tel:0392189544" class="footer-phone">0392189544</a></p>
             </section>
-
             <section>
-                <h2 class="font-bold text-lg mb-2">
-                    Liên Kết
-                </h2>
-
-                <ul>
-                    <li><a href="#" class="underline">Trang chủ</a></li>
-                    <li><a href="#" class="underline">Tin mới</a></li>
-                    <li><a href="#" class="underline">Giới thiệu</a></li>
+                <h2 class="footer-heading">Trợ năng nhanh</h2>
+                <ul class="footer-links">
+                    <li><button onclick="switchTab('tab-home', true)" class="footer-btn">Quay lại Trang chủ tổng hợp</button></li>
                 </ul>
             </section>
-
         </div>
-
-        <div class="border-t border-gray-700 mt-6 pt-4 text-center">
-            © 2026 All Rights Reserved
+        <div class="footer-bottom">
+            © 2026 Toàn bộ bản quyền thuộc về cơ quan báo chí. Xây dựng theo tiêu chuẩn trợ năng WCAG 2.2 toàn diện.
         </div>
-
     </footer>
 
     <script src="script.js"></script>
-
 </body>
 
 </html>
