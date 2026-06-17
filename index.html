@@ -24,120 +24,167 @@
             <div class="accessibility-controls">
                 <button id="decrease-font" aria-label="Giảm kích thước văn bản" class="acc-btn">A-</button>
                 <button id="increase-font" aria-label="Tăng kích thước văn bản" class="acc-btn">A+</button>
-                <button id="contrast-btn" aria-label="Thay đổi chế độ tương phản màu sắc" class="acc-btn contrast-toggle">Tương phản cao</button>
+                <button id="contrast-btn" aria-label="Thay đổi chế độ tương phản màu sắc"
+                    class="acc-btn contrast-toggle">Tương phản cao</button>
             </div>
         </div>
     </header>
 
     <nav aria-label="Menu danh mục chính" class="bg-gray-800 text-white shadow-md">
         <ul role="tablist" class="nav-tabs">
-            <li role="presentation"><button id="tab-home" role="tab" aria-selected="true" aria-controls="panel-home" class="tab-link active-tab">Trang chủ</button></li>
-            <li role="presentation"><button id="tab-tech" role="tab" aria-selected="false" aria-controls="panel-tech" tabindex="-1" class="tab-link">Công nghệ</button></li>
-            <li role="presentation"><button id="tab-sports" role="tab" aria-selected="false" aria-controls="panel-sports" tabindex="-1" class="tab-link">Thể thao</button></li>
-            <li role="presentation"><button id="tab-ent" role="tab" aria-selected="false" aria-controls="panel-ent" tabindex="-1" class="tab-link">Giải trí</button></li>
-            <li role="presentation"><button id="tab-edu" role="tab" aria-selected="false" aria-controls="panel-edu" tabindex="-1" class="tab-link">Giáo dục</button></li>
-            <li role="presentation"><button id="tab-biz" role="tab" aria-selected="false" aria-controls="panel-biz" tabindex="-1" class="tab-link">Kinh doanh</button></li>
-            <li role="presentation"><button id="tab-contact" role="tab" aria-selected="false" aria-controls="panel-contact" tabindex="-1" class="tab-link">Liên hệ</button></li>
+            <li role="presentation"><button id="tab-home" role="tab" aria-selected="true" aria-controls="panel-home"
+                    class="tab-link active-tab">Trang chủ</button></li>
+            <li role="presentation"><button id="tab-tech" role="tab" aria-selected="false" aria-controls="panel-tech"
+                    tabindex="-1" class="tab-link">Công nghệ</button></li>
+            <li role="presentation"><button id="tab-sports" role="tab" aria-selected="false"
+                    aria-controls="panel-sports" tabindex="-1" class="tab-link">Thể thao</button></li>
+            <li role="presentation"><button id="tab-ent" role="tab" aria-selected="false" aria-controls="panel-ent"
+                    tabindex="-1" class="tab-link">Giải trí</button></li>
+            <li role="presentation"><button id="tab-edu" role="tab" aria-selected="false" aria-controls="panel-edu"
+                    tabindex="-1" class="tab-link">Giáo dục</button></li>
+            <li role="presentation"><button id="tab-biz" role="tab" aria-selected="false" aria-controls="panel-biz"
+                    tabindex="-1" class="tab-link">Kinh doanh</button></li>
+            <li role="presentation"><button id="tab-contact" role="tab" aria-selected="false"
+                    aria-controls="panel-contact" tabindex="-1" class="tab-link">Liên hệ</button></li>
         </ul>
     </nav>
 
     <main id="main-content" class="main-layout" tabindex="-1">
 
         <div class="content-area">
-            
+
             <section id="full-article-view" class="card p-6 hidden" aria-live="polite">
-                <button id="back-to-list-btn" class="back-btn" aria-label="Quay lại danh sách bài viết cũ">&larr; Quay lại danh sách tin</button>
+                <button id="back-to-list-btn" class="back-btn" aria-label="Quay lại danh sách bài viết cũ">&larr; Quay
+                    lại danh sách tin</button>
                 <div id="full-article-content" class="mt-4">
-                    </div>
+                </div>
             </section>
 
             <div id="tabs-container">
 
                 <section id="panel-home" role="tabpanel" aria-labelledby="tab-home" class="tab-panel">
                     <h2 class="section-title">Tin tức tiêu điểm trong ngày</h2>
-                    
+
                     <article class="card p-6">
                         <span class="badge bg-red">Tiêu điểm</span>
-                        <h3 class="text-xl font-semibold mb-2 mt-2">Khai mạc tuần lễ văn hóa di sản đặc sắc tại trung tâm thành phố</h3>
-                        <p class="text-gray-800 mb-3 line-clamp-2">Sáng nay, chuỗi lễ hội văn hóa truyền thống quy mô lớn đã chính thức bắt đầu tại quảng trường trung tâm cố đô với nhiều hoạt động hấp dẫn...</p>
-                        <button class="read-more-btn" onclick="openFullArticle('home-1')">Đọc bài báo hoàn chỉnh <span class="sr-only">về Khai mạc tuần lễ văn hóa di sản</span></button>
+                        <h3 class="text-xl font-semibold mb-2 mt-2">Khai mạc tuần lễ văn hóa di sản đặc sắc tại trung
+                            tâm thành phố</h3>
+                        <p class="text-gray-800 mb-3 line-clamp-2">Sáng nay, chuỗi lễ hội văn hóa truyền thống quy mô
+                            lớn đã chính thức bắt đầu tại quảng trường trung tâm cố đô với nhiều hoạt động hấp dẫn...
+                        </p>
+                        <button class="read-more-btn" onclick="openFullArticle('home-1')">Đọc bài báo hoàn chỉnh <span
+                                class="sr-only">về Khai mạc tuần lễ văn hóa di sản</span></button>
                     </article>
 
                     <article class="card p-6">
                         <span class="badge bg-blue">Tin mới</span>
-                        <h3 class="text-xl font-semibold mb-2 mt-2">Dự thảo chuyển đổi xanh: Đầu tư đồng bộ hạ tầng xe điện đô thị</h3>
-                        <p class="text-gray-800 mb-3 line-clamp-2">UBND tỉnh vừa phê duyệt đề án thử nghiệm xây dựng 50 trạm sạc điện thông minh ứng dụng công nghệ năng lượng mặt trời thế hệ mới...</p>
-                        <button class="read-more-btn" onclick="openFullArticle('home-2')">Đọc bài báo hoàn chỉnh <span class="sr-only">về Dự thảo hạ tầng xe điện đô thị</span></button>
+                        <h3 class="text-xl font-semibold mb-2 mt-2">Dự thảo chuyển đổi xanh: Đầu tư đồng bộ hạ tầng xe
+                            điện đô thị</h3>
+                        <p class="text-gray-800 mb-3 line-clamp-2">UBND tỉnh vừa phê duyệt đề án thử nghiệm xây dựng 50
+                            trạm sạc điện thông minh ứng dụng công nghệ năng lượng mặt trời thế hệ mới...</p>
+                        <button class="read-more-btn" onclick="openFullArticle('home-2')">Đọc bài báo hoàn chỉnh <span
+                                class="sr-only">về Dự thảo hạ tầng xe điện đô thị</span></button>
                     </article>
                 </section>
 
-                <section id="panel-tech" role="tabpanel" aria-labelledby="tab-tech" class="tab-panel hidden" aria-hidden="true">
+                <section id="panel-tech" role="tabpanel" aria-labelledby="tab-tech" class="tab-panel hidden"
+                    aria-hidden="true">
                     <h2 class="section-title">Chuyên mục: Công nghệ</h2>
-                    
+
                     <article class="card p-6">
-                        <h3 class="text-xl font-semibold mb-2">Điện thoại gập Samsung dùng được mấy năm trước khi hỏng?</h3>
-                        <p class="text-gray-800 mb-3 line-clamp-2">Theo các báo cáo thử nghiệm độ bền phần cứng mới nhất năm 2026, thế hệ màn hình gập mới đã có những bước tiến vượt bậc đáng kể...</p>
-                        <button class="read-more-btn" onclick="openFullArticle('tech-1')">Đọc bài báo hoàn chỉnh <span class="sr-only">về Độ bền điện thoại gập Samsung</span></button>
+                        <h3 class="text-xl font-semibold mb-2">Điện thoại gập Samsung dùng được mấy năm trước khi hỏng?
+                        </h3>
+                        <p class="text-gray-800 mb-3 line-clamp-2">Theo các báo cáo thử nghiệm độ bền phần cứng mới nhất
+                            năm 2026, thế hệ màn hình gập mới đã có những bước tiến vượt bậc đáng kể...</p>
+                        <button class="read-more-btn" onclick="openFullArticle('tech-1')">Đọc bài báo hoàn chỉnh <span
+                                class="sr-only">về Độ bền điện thoại gập Samsung</span></button>
                     </article>
 
                     <article class="card p-6">
-                        <h3 class="text-xl font-semibold mb-2">Ứng dụng trí tuệ nhân tạo (AI) tối ưu hóa mạng lưới điện thông minh</h3>
-                        <p class="text-gray-800 mb-3 line-clamp-2">Các tập đoàn viễn thông lớn vừa ứng dụng thử nghiệm mô hình thuật toán học máy điều phối năng lượng tải điện tự động định giờ cao điểm...</p>
-                        <button class="read-more-btn" onclick="openFullArticle('tech-2')">Đọc bài báo hoàn chỉnh <span class="sr-only">về AI tối ưu hóa mạng lưới điện</span></button>
+                        <h3 class="text-xl font-semibold mb-2">Ứng dụng trí tuệ nhân tạo (AI) tối ưu hóa mạng lưới điện
+                            thông minh</h3>
+                        <p class="text-gray-800 mb-3 line-clamp-2">Các tập đoàn viễn thông lớn vừa ứng dụng thử nghiệm
+                            mô hình thuật toán học máy điều phối năng lượng tải điện tự động định giờ cao điểm...</p>
+                        <button class="read-more-btn" onclick="openFullArticle('tech-2')">Đọc bài báo hoàn chỉnh <span
+                                class="sr-only">về AI tối ưu hóa mạng lưới điện</span></button>
                     </article>
                 </section>
 
-                <section id="panel-sports" role="tabpanel" aria-labelledby="tab-sports" class="tab-panel hidden" aria-hidden="true">
+                <section id="panel-sports" role="tabpanel" aria-labelledby="tab-sports" class="tab-panel hidden"
+                    aria-hidden="true">
                     <h2 class="section-title">Chuyên mục: Thể thao</h2>
                     <article class="card p-6">
-                        <h3 class="text-xl font-semibold mb-2">Giải chạy Marathon quốc tế Huế 2026 phá kỷ lục vận động viên</h3>
-                        <p class="text-gray-800 mb-3 line-clamp-2">Ban tổ chức sự kiện chạy điền kinh công bố số lượng hồ sơ đạt cột mốc lịch sử mới với hơn 15.000 chân chạy chuyên nghiệp đăng ký...</p>
-                        <button class="read-more-btn" onclick="openFullArticle('sports-1')">Đọc bài báo hoàn chỉnh <span class="sr-only">về Giải chạy Marathon quốc tế Huế</span></button>
+                        <h3 class="text-xl font-semibold mb-2">Giải chạy Marathon quốc tế Huế 2026 phá kỷ lục vận động
+                            viên</h3>
+                        <p class="text-gray-800 mb-3 line-clamp-2">Ban tổ chức sự kiện chạy điền kinh công bố số lượng
+                            hồ sơ đạt cột mốc lịch sử mới với hơn 15.000 chân chạy chuyên nghiệp đăng ký...</p>
+                        <button class="read-more-btn" onclick="openFullArticle('sports-1')">Đọc bài báo hoàn chỉnh <span
+                                class="sr-only">về Giải chạy Marathon quốc tế Huế</span></button>
                     </article>
                 </section>
 
-                <section id="panel-ent" role="tabpanel" aria-labelledby="tab-ent" class="tab-panel hidden" aria-hidden="true">
+                <section id="panel-ent" role="tabpanel" aria-labelledby="tab-ent" class="tab-panel hidden"
+                    aria-hidden="true">
                     <h2 class="section-title">Chuyên mục: Giải trí</h2>
                     <article class="card p-6">
-                        <h3 class="text-xl font-semibold mb-2">Sân khấu trình diễn nghệ thuật thực cảnh huyền ảo trên Sông Hương</h3>
-                        <p class="text-gray-800 mb-3 line-clamp-2">Đêm diễn mở màn nghệ thuật âm nhạc thực cảnh kết hợp công nghệ ánh sáng đồ họa 3D Mapping lên mặt nước lung linh kỳ ảo...</p>
-                        <button class="read-more-btn" onclick="openFullArticle('ent-1')">Đọc bài báo hoàn chỉnh <span class="sr-only">về Sân khấu thực cảnh sông Hương</span></button>
+                        <h3 class="text-xl font-semibold mb-2">Sân khấu trình diễn nghệ thuật thực cảnh huyền ảo trên
+                            Sông Hương</h3>
+                        <p class="text-gray-800 mb-3 line-clamp-2">Đêm diễn mở màn nghệ thuật âm nhạc thực cảnh kết hợp
+                            công nghệ ánh sáng đồ họa 3D Mapping lên mặt nước lung linh kỳ ảo...</p>
+                        <button class="read-more-btn" onclick="openFullArticle('ent-1')">Đọc bài báo hoàn chỉnh <span
+                                class="sr-only">về Sân khấu thực cảnh sông Hương</span></button>
                     </article>
                 </section>
 
-                <section id="panel-edu" role="tabpanel" aria-labelledby="tab-edu" class="tab-panel hidden" aria-hidden="true">
+                <section id="panel-edu" role="tabpanel" aria-labelledby="tab-edu" class="tab-panel hidden"
+                    aria-hidden="true">
                     <h2 class="section-title">Chuyên mục: Giáo dục</h2>
                     <article class="card p-6">
-                        <h3 class="text-xl font-semibold mb-2">Đại học Huế đẩy mạnh số hóa quy trình làm hồ sơ nguyện vọng</h3>
-                        <p class="text-gray-800 mb-3 line-clamp-2">Hệ thống phần mềm xét tuyển tích hợp dữ liệu căn cước công dân giúp học sinh rút ngắn thời gian thao tác xuống chỉ còn 3 phút...</p>
-                        <button class="read-more-btn" onclick="openFullArticle('edu-1')">Đọc bài báo hoàn chỉnh <span class="sr-only">về Số hóa xét tuyển Đại học Huế</span></button>
+                        <h3 class="text-xl font-semibold mb-2">Đại học Huế đẩy mạnh số hóa quy trình làm hồ sơ nguyện
+                            vọng</h3>
+                        <p class="text-gray-800 mb-3 line-clamp-2">Hệ thống phần mềm xét tuyển tích hợp dữ liệu căn cước
+                            công dân giúp học sinh rút ngắn thời gian thao tác xuống chỉ còn 3 phút...</p>
+                        <button class="read-more-btn" onclick="openFullArticle('edu-1')">Đọc bài báo hoàn chỉnh <span
+                                class="sr-only">về Số hóa xét tuyển Đại học Huế</span></button>
                     </article>
                 </section>
 
-                <section id="panel-biz" role="tabpanel" aria-labelledby="tab-biz" class="tab-panel hidden" aria-hidden="true">
+                <section id="panel-biz" role="tabpanel" aria-labelledby="tab-biz" class="tab-panel hidden"
+                    aria-hidden="true">
                     <h2 class="section-title">Chuyên mục: Kinh doanh</h2>
                     <article class="card p-6">
-                        <h3 class="text-xl font-semibold mb-2">Kinh tế tuần hoàn: Doanh nghiệp dệt may đón đầu năng lượng xanh</h3>
-                        <p class="text-gray-800 mb-3 line-clamp-2">Để đáp ứng rào cản tiêu chuẩn phát triển bền vững ESG khó tính từ Châu Âu, các doanh nghiệp đồng loạt lắp điện mặt trời áp mái...</p>
-                        <button class="read-more-btn" onclick="openFullArticle('biz-1')">Đọc bài báo hoàn chỉnh <span class="sr-only">về Kinh tế tuần hoàn dệt may</span></button>
+                        <h3 class="text-xl font-semibold mb-2">Kinh tế tuần hoàn: Doanh nghiệp dệt may đón đầu năng
+                            lượng xanh</h3>
+                        <p class="text-gray-800 mb-3 line-clamp-2">Để đáp ứng rào cản tiêu chuẩn phát triển bền vững ESG
+                            khó tính từ Châu Âu, các doanh nghiệp đồng loạt lắp điện mặt trời áp mái...</p>
+                        <button class="read-more-btn" onclick="openFullArticle('biz-1')">Đọc bài báo hoàn chỉnh <span
+                                class="sr-only">về Kinh tế tuần hoàn dệt may</span></button>
                     </article>
                 </section>
 
-                <section id="panel-contact" role="tabpanel" aria-labelledby="tab-contact" class="tab-panel hidden" aria-hidden="true">
+                <section id="panel-contact" role="tabpanel" aria-labelledby="tab-contact" class="tab-panel hidden"
+                    aria-hidden="true">
                     <h2 class="section-title">Liên hệ góp ý với tòa soạn</h2>
                     <div class="card p-6">
-                        <form action="#" method="POST" class="contact-form" onsubmit="event.preventDefault(); alert('Gửi liên hệ thành công!');">
+                        <form action="#" method="POST" class="contact-form"
+                            onsubmit="event.preventDefault(); alert('Gửi liên hệ thành công!');">
                             <div class="form-group">
-                                <label for="fullname" class="form-label">Họ và tên <span class="text-red-700">*</span></label>
-                                <input type="text" id="fullname" name="fullname" required aria-required="true" class="form-input">
+                                <label for="fullname" class="form-label">Họ và tên <span
+                                        class="text-red-700">*</span></label>
+                                <input type="text" id="fullname" name="fullname" required aria-required="true"
+                                    class="form-input">
                             </div>
                             <div class="form-group">
-                                <label for="email" class="form-label">Địa chỉ Email <span class="text-red-700">*</span></label>
-                                <input type="email" id="email" name="email" required aria-required="true" class="form-input">
+                                <label for="email" class="form-label">Địa chỉ Email <span
+                                        class="text-red-700">*</span></label>
+                                <input type="email" id="email" name="email" required aria-required="true"
+                                    class="form-input">
                             </div>
                             <div class="form-group">
-                                <label for="message" class="form-label">Nội dung thư phản hồi <span class="text-red-700">*</span></label>
-                                <textarea id="message" name="message" rows="5" required aria-required="true" class="form-input"></textarea>
+                                <label for="message" class="form-label">Nội dung thư phản hồi <span
+                                        class="text-red-700">*</span></label>
+                                <textarea id="message" name="message" rows="5" required aria-required="true"
+                                    class="form-input"></textarea>
                             </div>
                             <button type="submit" class="submit-btn">Xác nhận gửi thông tin</button>
                         </form>
@@ -150,11 +197,14 @@
         <aside aria-label="Khối tiện ích chuyển danh mục nhanh" class="sidebar">
             <h2 class="sidebar-title">Danh mục nhanh</h2>
             <ul class="sidebar-list">
-                <li><button onclick="switchTab('tab-tech', true)" class="sidebar-link">Chuyên mục Công nghệ</button></li>
-                <li><button onclick="switchTab('tab-sports', true)" class="sidebar-link">Chuyên mục Thể thao</button></li>
+                <li><button onclick="switchTab('tab-tech', true)" class="sidebar-link">Chuyên mục Công nghệ</button>
+                </li>
+                <li><button onclick="switchTab('tab-sports', true)" class="sidebar-link">Chuyên mục Thể thao</button>
+                </li>
                 <li><button onclick="switchTab('tab-ent', true)" class="sidebar-link">Chuyên mục Giải trí</button></li>
                 <li><button onclick="switchTab('tab-edu', true)" class="sidebar-link">Chuyên mục Giáo dục</button></li>
-                <li><button onclick="switchTab('tab-biz', true)" class="sidebar-link">Chuyên mục Kinh doanh</button></li>
+                <li><button onclick="switchTab('tab-biz', true)" class="sidebar-link">Chuyên mục Kinh doanh</button>
+                </li>
             </ul>
         </aside>
 
@@ -168,12 +218,14 @@
             </section>
             <section>
                 <h2 class="footer-heading">Thông tin tòa soạn</h2>
-                <p class="text-sm">Email: contact@news.com | Hotline: <a href="tel:0392189544" class="footer-phone">0392189544</a></p>
+                <p class="text-sm">Email: contact@news.com | Hotline: <a href="tel:0392189544"
+                        class="footer-phone">0392189544</a></p>
             </section>
             <section>
                 <h2 class="footer-heading">Trợ năng nhanh</h2>
                 <ul class="footer-links">
-                    <li><button onclick="switchTab('tab-home', true)" class="footer-btn">Quay lại Trang chủ tổng hợp</button></li>
+                    <li><button onclick="switchTab('tab-home', true)" class="footer-btn">Quay lại Trang chủ tổng
+                            hợp</button></li>
                 </ul>
             </section>
         </div>
