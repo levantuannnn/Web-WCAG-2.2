@@ -1,4 +1,4 @@
-/* --- Khởi tạo cơ bản --- */
+
 * {
     margin: 0;
     padding: 0;
@@ -13,7 +13,7 @@ body {
     transition: background-color 0.2s, color 0.2s;
 }
 
-/* --- Khối liên kết nhảy nhanh (Skip Link) --- */
+
 .skip-link {
     position: absolute;
     top: -9999px;
@@ -33,7 +33,7 @@ body {
     outline: 4px solid #facc15;
 }
 
-/* --- Thành phần Header Layout --- */
+
 .bg-gray-900 {
     background-color: #111827;
 }
@@ -99,7 +99,7 @@ body {
     width: auto;
 }
 
-/* --- Nhóm phím điều khiển Trợ năng (Vùng nhấn đạt chuẩn 44x44px) --- */
+
 .accessibility-controls {
     display: flex;
     gap: 0.5rem;
@@ -117,7 +117,7 @@ body {
     min-height: 44px;
 }
 
-/* Hiển thị viền Focus cực kỳ nổi bật khi dùng phím Tab di chuyển */
+
 .tab-link:focus,
 .acc-btn:focus,
 .form-input:focus,
@@ -133,7 +133,7 @@ body {
     background-color: #facc15;
 }
 
-/* --- Thanh Menu Danh Mục --- */
+
 .nav-tabs {
     display: flex;
     flex-wrap: wrap;
@@ -169,7 +169,7 @@ body {
     color: #dc2626 !important;
 }
 
-/* --- Thiết kế hệ thống Nút nhấn Đọc Bài và Trở Lại --- */
+
 .read-more-btn {
     background-color: #1e40af;
     color: #ffffff;
@@ -211,7 +211,6 @@ body {
     color: #b91c1c;
 }
 
-/* Ẩn văn bản trợ năng cho Screen Reader */
 .sr-only {
     position: absolute;
     width: 1px;
@@ -223,7 +222,7 @@ body {
     border: 0;
 }
 
-/* Cắt ngắn chữ hiển thị danh sách bài viết tóm tắt */
+
 .line-clamp-2 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -231,7 +230,7 @@ body {
     overflow: hidden;
 }
 
-/* --- Bố cục tổng thể cấu trúc trang web --- */
+
 .main-layout {
     display: flex;
     flex-direction: column;
@@ -317,7 +316,6 @@ body {
     line-height: 2.1rem;
 }
 
-/* --- Hệ thống Form liên hệ --- */
 .contact-form {
     display: flex;
     flex-direction: column;
@@ -363,7 +361,7 @@ body {
     background-color: #1e3a8a;
 }
 
-/* --- Sidebar danh mục --- */
+
 .sidebar {
     width: 100%;
     background-color: #ffffff;
@@ -411,7 +409,7 @@ body {
     text-decoration: underline;
 }
 
-/* --- Khối Chân Trang --- */
+
 .footer-grid {
     display: grid;
     grid-template-cols: 1fr;
@@ -465,7 +463,7 @@ body {
     display: none !important;
 }
 
-/* ---  CHẾ ĐỘ TƯƠNG PHẢN CAO ĐẠT CHUẨN WCAG AAA --- */
+
 body.high-contrast {
     background-color: #000000 !important;
     color: #ffffff !important;
