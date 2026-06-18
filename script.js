@@ -1,4 +1,4 @@
-// ==================== PHẦN 1: Quản lý kích thước văn bản & Tương phản ====================
+
 let currentFontSize = parseInt(localStorage.getItem("fontSize")) || 16;
 document.body.style.fontSize = currentFontSize + "px";
 
@@ -37,7 +37,7 @@ if (contrastBtn) {
     });
 }
 
-// ==================== PHẦN 2: Cơ sở dữ liệu các bài báo hoàn chỉnh ====================
+
 const articlesDatabase = {
     'home-1': `
         <span class="badge bg-red">Tiêu điểm</span>
@@ -111,10 +111,10 @@ function openFullArticle(articleKey) {
 
     document.getElementById('tabs-container').classList.add('hidden'); // Ẩn danh sách tin tổng hợp
     const fullArticleView = document.getElementById('full-article-view');
-    document.getElementById('full-article-content').innerHTML = articleHtml; // Đổ nội dung chi tiết vào
+    document.getElementById('full-article-content').innerHTML = articleHtml; // Đổ nội dung chi tiết 
     fullArticleView.classList.remove('hidden'); // Hiện khối đọc bài chi tiết
 
-    // Chuyển tiêu điểm phím vào nút "Quay lại" tĩnh lặng, KHÔNG làm cuộn trượt trang gây phiền toái
+    // Chuyển tiêu điểm phím vào nút "Quay lại" 
     const backBtn = document.getElementById('back-to-list-btn');
     if (backBtn) {
         backBtn.focus();
@@ -126,7 +126,7 @@ function closeFullArticle() {
     document.getElementById('full-article-view').classList.add('hidden'); // Ẩn vùng đọc chi tiết
     document.getElementById('tabs-container').classList.remove('hidden'); // Hiện lại danh sách tin cũ
 
-    // Trả tiêu điểm bàn phím về chính xác nút bấm cũ người dùng vừa kích hoạt (WCAG 2.1.1)
+    // Trả tiêu điểm bàn phím về chính xác nút bấm cũ
     if (lastFocusedElement) {
         lastFocusedElement.focus();
     }
@@ -135,7 +135,7 @@ function closeFullArticle() {
 document.getElementById('back-to-list-btn').addEventListener('click', closeFullArticle);
 
 
-// ==================== PHẦN 3: Quản lý Menu Tabs (Duyệt phím mũi tên tĩnh lặng) ====================
+
 const tabs = document.querySelectorAll('.tab-link');
 const panels = document.querySelectorAll('.tab-panel');
 
@@ -143,7 +143,7 @@ function switchTab(tabId, shouldScroll = false) {
     const targetTab = document.getElementById(tabId);
     if (!targetTab) return;
 
-    // Tự động đóng vùng xem bài viết đầy đủ nếu người dùng đổi hẳn tab chuyên mục khác trên Menu
+    // Tự động đóng vùng xem bài viết đầy đủ nếu người dùng đổi hẳn tab chuyên mục khác 
     document.getElementById('full-article-view').classList.add('hidden');
     document.getElementById('tabs-container').classList.remove('hidden');
 
@@ -195,7 +195,7 @@ if (tabList) {
         let index = Array.from(tabs).indexOf(activeTab);
 
         if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
-            e.preventDefault(); // Chặn đứng hiện tượng giật trượt màn hình kéo xuống
+            e.preventDefault(); // Chặn màn hình kéo xuống
             index = (index + 1) % tabs.length;
             tabs[index].focus();
             switchTab(tabs[index].id, false); // Tham số false: Thay đổi nội dung tĩnh lặng
